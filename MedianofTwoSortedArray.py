@@ -12,19 +12,19 @@ class MedianofTwoSortedArray:
         if len(arr2) == 0:
             mid = math.floor((len(arr1)-1)/2)
             return arr1[mid]
-        num = math.ceil((len(arr1)+len(arr2)/2)         
-        if len(arr1)<=len(arr2):
-            pos=helper(arr1, arr2, num, 0, len(arr1)-1)
+        num = math.ceil((len(arr1)+len(arr2)/2)
+        if len(arr1) <= len(arr2):
+            pos = self.helper(arr1, arr2, num, 0, len(arr1)-1)
             if pos != -1 :
                 return arr1[pos]
             else:
-                return arr2[helper(arr2, arr1, num, 0, len(arr2)-1)]
+                return arr2[self.helper(arr2, arr1, num, 0, len(arr2)-1)]
         else:
-            pos=helper(arr2, arr1, num, 0, len(arr2)-1)
+            pos = self.helper(arr2, arr1, num, 0, len(arr2)-1)
             if(pos != -1):
                 return arr2[pos]
             else:
-                return arr1[helper(arr1, arr2, num, 0, len(arr1)-1)]
+                return arr1[self.helper(arr1, arr2, num, 0, len(arr1)-1)]
             
     def helper(self, targetArr, searchArr, num, start, end):
         if start >= end:
