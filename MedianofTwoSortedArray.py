@@ -8,54 +8,72 @@ class MedianofTwoSortedArray:
             return 0
         if len(nums1) == 0:
             mid = int(math.floor(float(len(nums2)-1)/2))
-            return arr2[mid]
+            return nums2[mid] if not len(nums2)%2 == 0 else (nums2[mid]+nums2[mid+1])/2
         if len(nums2) == 0:
             mid = int(math.floor(float(len(nums1)-1)/2))
-            return nums1[mid]
+            return nums1[mid] if not len(nums1)%2 == 0 else (nums1[mid]+nums1[mid+1])/2
         
-        num = int(math.ceil(float(len(nums1)+len(nums2))/2))
+        self.halfLen = int(math.ceil(float(len(nums1)+len(nums2))/2))
+        self.isEven = (len(nums1)+len(nums2))%2 == 0
         if(len(nums1)<=len(nums2)):
-            pos = self.helper(nums1, nums2, num, 0, len(nums1)-1)
-            if pos != -1:
-                return nums1[pos]
+            median = self.helper(nums1, nums2, 0, len(nums1)-1)
+            if median != -1:
+                return median
             else:
-                return nums2[self.helper(nums2, nums1, num, 0, len(nums2)-1)]
+                return self.helper(nums2, nums1, 0, len(nums2)-1)
         else:
-            pos = self.helper(nums2, nums1, num, 0, len(nums2)-1)
-            if pos != -1:
-                return nums2[pos]
+            median = self.helper(nums2, nums1, 0, len(nums2)-1)
+            if median != -1:
+                return median
             else:
-                return nums1[self.helper(nums1, nums2, num, 0, len(nums1)-1)]
+                return self.helper(nums1, nums2, 0, len(nums1)-1)
             
             
-    def helper(self, targetArr, searchArr, num, start, end):
+    def helper(self, targetArr, searchArr, start, end):
+            median = 0
             if start > end:
                 return -1
             mid = int(math.floor((float(end-start))/2)+start)
-            remainNum = num - (mid + 1)
-            if remainNum>0 and remainNum+1<len(searchArr):
+            remainNum = self.halfLen - (mid + 1)
+            if remainNum>0 and remainNum+1<=len(searchArr):
                 if searchArr[remainNum-1] <= targetArr[mid] and searchArr[remainNum] >= targetArr[mid]:
-                    return mid
+                    if not self.isEven:
+                        return targetArr[mid]
+                    elif mid+1 < len(targetArr):
+                        return (targetArr[mid]+min(searchArr[remainNum],targetArr[mid+1]))/2 
+                    else:
+                        return (targetArr[mid]+searchArr[remainNum])/2
                 elif searchArr[remainNum-1] > targetArr[mid]:
-                    mid = self.helper(targetArr, searchArr, num, mid + 1, end)
+                    median = self.helper(targetArr, searchArr, mid + 1, end)
                 elif searchArr[remainNum] < targetArr[mid]:
-                    mid = self.helper(targetArr, searchArr, num, start, mid - 1)
-            elif remainNum<=0 and remainNum+1<len(searchArr):
+                    median = self.helper(targetArr, searchArr, start, mid - 1)
+            elif remainNum<=0 and remainNum+1<=len(searchArr):
                 if searchArr[remainNum] >= targetArr[mid]:
-                    return mid
+                    if not self.isEven:
+                        return targetArr[mid]
+                    elif mid+1 < len(targetArr):
+                        return (targetArr[mid]+min(searchArr[remainNum],targetArr[mid+1]))/2 
+                    else:
+                        return (targetArr[mid]+searchArr[remainNum])/2
                 else:
-                    mid = self.helper(targetArr, searchArr, num, start, mid - 1)
-            elif remainNum+1>=len(searchArr) and remainNum>0:
+                    median = self.helper(targetArr, searchArr, start, mid - 1)
+            elif remainNum+1>len(searchArr) and remainNum>0:
                 if searchArr[remainNum-1] <= targetArr[mid]:
-                    return mid
+                    if not self.isEven:
+                        return targetArr[mid]
+                    elif mid+1 < len(targetArr):
+                        return (targetArr[mid]+targetArr[mid+1])/2 
+                    else:
+                        return -1
                 else:
-                    mid = self.helper(targetArr, searchArr, num, mid + 1, end)
+                    median = self.helper(targetArr, searchArr, mid + 1, end)
             else:
                 return -1
-            return mid
+
+            return median
 
 if __name__ == "__main__":
     caller = MedianofTwoSortedArray()
-    arr1 = [1]
-    arr2 = [3,6]
+    arr1 = [3,5,6,9,14]
+    arr2 = [1,2,10]
     print str(caller.findMedian(arr1, arr2))
