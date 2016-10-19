@@ -26,17 +26,25 @@ class Solution(object):
 
     def helper(self, word, visited, pathLen):
         if word not in self.chainMap:
-            return
+            return False
+        if self.shortestPath <= len(visited)+1:
+            return False
+
         if self.endWord in self.chainMap[word]:
             if pathLen+1 < self.shortestPath:
                 self.shortestPath = pathLen + 1
-            return
+                return True
+            else:
+                return False
 
         for w in self.chainMap[word]:
             if w not in visited:
                 newVisited = list(visited)
                 newVisited.append(word)
-                self.helper(w, newVisited, pathLen+1)
+                if self.helper(w, newVisited, pathLen+1): return True
+
+        return False
+
 
     def ladderLength(self, beginWord, endWord, wordList):
         """
@@ -50,7 +58,7 @@ class Solution(object):
             return 2
 
         self.endWord = endWord
-        self.wordList = wordList
+        self.wordList = list(wordList)
         self.chainMap = {}
         self.shortestPath = len(wordList)+100
 
