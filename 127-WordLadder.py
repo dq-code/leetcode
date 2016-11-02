@@ -1,51 +1,4 @@
 class Solution(object):
-    def oneDiff(self, word1, word2):
-        if word1==word2:
-            return False
-
-        diff = 0
-        for i in range(0, len(word1)):
-            if word1[i] != word2[i]:
-                diff += 1
-                if diff > 1: return False
-
-        return True
-
-    def buildChainMap(self):
-        for i in range(0, len(self.wordList)-1):
-            for j in range(i+1, len(self.wordList)):
-                if self.oneDiff(self.wordList[i], self.wordList[j]):
-                    if self.wordList[i] not in self.chainMap:
-                        self.chainMap[self.wordList[i]] = [self.wordList[j]]
-                    else:
-                        self.chainMap[self.wordList[i]].append(self.wordList[j])
-                    if self.wordList[j] not in self.chainMap:
-                        self.chainMap[self.wordList[j]] = [self.wordList[i]]
-                    else:
-                        self.chainMap[self.wordList[j]].append(self.wordList[i])
-
-    def helper(self, word, visited, pathLen):
-        if word not in self.chainMap:
-            return False
-        if self.shortestPath <= len(visited)+1:
-            return False
-
-        if self.endWord in self.chainMap[word]:
-            if pathLen+1 < self.shortestPath:
-                self.shortestPath = pathLen + 1
-                return True
-            else:
-                return False
-
-        for w in self.chainMap[word]:
-            if w not in visited:
-                newVisited = list(visited)
-                newVisited.append(word)
-                if self.helper(w, newVisited, pathLen+1): return True
-
-        return False
-
-
     def ladderLength(self, beginWord, endWord, wordList):
         """
         :type beginWord: str
@@ -54,20 +7,26 @@ class Solution(object):
         :rtype: int
         """
 
-        if self.oneDiff(beginWord,endWord):
-            return 2
+        queue = [[beginWord, 1]]
 
-        self.endWord = endWord
-        self.wordList = list(wordList)
-        self.chainMap = {}
-        self.shortestPath = len(wordList)+100
+        while len(queue) > 0:
+            comb = queue.pop(0)
+            word = comb[0]
+            length = comb[1]
+            for i in range(len(word)):
+                front = word[:i]
+                back = word[i + 1:]
+                for j in 'abcdefghijklmnopqrstuvwxyz':
+                    if word[i] != j:
+                        tempWord = front + j + back
+                        if tempWord == endWord:
+                            return length + 1
+                        if tempWord in wordList:
+                            wordList.remove(tempWord)
+                            queue.append([tempWord, length + 1])
 
-        self.buildChainMap()
-        self.helper(beginWord, [], 1)
+        return 0
 
-        if self.shortestPath == len(wordList)+100: return 0
-        return self.shortestPath
-
-# if __name__ == "__main__":
-#     sol = Solution()
-#     print sol.ladderLength("hot", "dog", ["hot","dog","dot"])
+        # if __name__ == "__main__":
+        #     sol = Solution()
+        #     print sol.ladderLength("hot", "dog", ["hot","dog","dot"])
