@@ -24,28 +24,6 @@ class Solution(object):
                     else:
                         self.chainMap[self.wordList[j]].append(self.wordList[i])
 
-    def helper(self, word, visited, pathLen):
-        if word not in self.chainMap:
-            return False
-        if self.shortestPath <= len(visited)+1:
-            return False
-
-        if self.endWord in self.chainMap[word]:
-            if pathLen+1 < self.shortestPath:
-                self.shortestPath = pathLen + 1
-                return True
-            else:
-                return False
-
-        for w in self.chainMap[word]:
-            if w not in visited:
-                newVisited = list(visited)
-                newVisited.append(word)
-                if self.helper(w, newVisited, pathLen+1): return True
-
-        return False
-
-
     def ladderLength(self, beginWord, endWord, wordList):
         """
         :type beginWord: str
@@ -57,16 +35,26 @@ class Solution(object):
         if self.oneDiff(beginWord,endWord):
             return 2
 
-        self.endWord = endWord
         self.wordList = list(wordList)
         self.chainMap = {}
-        self.shortestPath = len(wordList)+100
-
         self.buildChainMap()
-        self.helper(beginWord, [], 1)
 
-        if self.shortestPath == len(wordList)+100: return 0
-        return self.shortestPath
+        queue = [[beginWord,1,[]]]
+        while len(queue)>0:
+            pair = queue.pop(0)
+            word = pair[0]
+            length = pair[1]
+            path = pair[2]
+            for w in self.chainMap[word]:
+                if w == endWord:
+                    return length+1
+                if w not in path:
+                    newpath = list(path)
+                    newpath.append(word)
+                    queue.append([w, length+1, newpath])
+
+
+        return 0
 
 # if __name__ == "__main__":
 #     sol = Solution()
