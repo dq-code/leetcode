@@ -7,17 +7,16 @@ class Solution(object):
 
         palindromeCut = [0 for x in range(len(s)+1)]
         palindromeCut[len(s)] = 0
-        palindromeCut[len(s)-1] = 0
 
         matrix = [[False for x in range(len(s))] for y in range(len(s))]
 
 
-        for i in range(len(s)-2, -1, -1):
+        for i in range(len(s)-1, -1, -1):
             minCut = len(s)
             for j in range(i, len(s)):
-                if s[j]==s[i] and (i-j<2 or matrix[j+1][i-1]):
+                if s[j]==s[i] and (j-i<2 or matrix[j-1][i+1]):
                     matrix[j][i] = True
                     minCut = min(minCut, palindromeCut[j+1]+1)
             palindromeCut[i] = minCut
 
-        return palindromeCut[0]
+        return palindromeCut[0]-1
