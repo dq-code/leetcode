@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3490e0c-29b6-4c45-baee-1ae913fe3af1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/140-WordBreakII.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/141-LinkedListCycle.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/142-LinkedListCycleII.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/143-ReorderList.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/147-InsertionSortList.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/148-SortList.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/150-EvaluateReversePolishNotation.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/151-ReverseWordsinaString.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/152-MaximumProductSubarray.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/153-FindMinimuminRotatedSortedArray.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/154-FindMinimuminRotatedSortedArrayII.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/132-PalindromePartitioningII.py" afterPath="$PROJECT_DIR$/132-PalindromePartitioningII.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/139-WordBreak.py" afterPath="$PROJECT_DIR$/139-WordBreak.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/155-MinStack.py" afterPath="$PROJECT_DIR$/155-MinStack.py" />
     </list>
     <ignored path="leetcode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,51 +35,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="139-WordBreak.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/139-WordBreak.py">
+      <file leaf-file-name="154-FindMinimuminRotatedSortedArrayII.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/154-FindMinimuminRotatedSortedArrayII.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="140-WordBreakII.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/140-WordBreakII.py">
+      <file leaf-file-name="153-FindMinimuminRotatedSortedArray.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/153-FindMinimuminRotatedSortedArray.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="141-LinkedListCycle.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/141-LinkedListCycle.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="142-LinkedListCycleII.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/142-LinkedListCycleII.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="143-ReorderList.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/143-ReorderList.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -110,6 +82,14 @@
         <option value="$PROJECT_DIR$/141-LinkedListCycle.py" />
         <option value="$PROJECT_DIR$/142-LinkedListCycleII.py" />
         <option value="$PROJECT_DIR$/143-ReorderList.py" />
+        <option value="$PROJECT_DIR$/147-InsertionSortList.py" />
+        <option value="$PROJECT_DIR$/148-SortList.py" />
+        <option value="$PROJECT_DIR$/150-EvaluateReversePolishNotation.py" />
+        <option value="$PROJECT_DIR$/155-MinStack.py" />
+        <option value="$PROJECT_DIR$/151-ReverseWordsinaString.py" />
+        <option value="$PROJECT_DIR$/152-MaximumProductSubarray.py" />
+        <option value="$PROJECT_DIR$/153-FindMinimuminRotatedSortedArray.py" />
+        <option value="$PROJECT_DIR$/154-FindMinimuminRotatedSortedArrayII.py" />
       </list>
     </option>
   </component>
@@ -627,14 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/139-WordBreak.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/140-WordBreakII.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -643,10 +615,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/141-LinkedListCycle.py">
+    <entry file="file://$PROJECT_DIR$/143-ReorderList.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        <state relative-caret-position="150">
+          <caret line="10" column="74" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -659,10 +631,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/143-ReorderList.py">
+    <entry file="file://$PROJECT_DIR$/141-LinkedListCycle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/139-WordBreak.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/147-InsertionSortList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/148-SortList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/150-EvaluateReversePolishNotation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/155-MinStack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="32" selection-start-line="44" selection-start-column="32" selection-end-line="44" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/151-ReverseWordsinaString.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/152-MaximumProductSubarray.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/153-FindMinimuminRotatedSortedArray.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/154-FindMinimuminRotatedSortedArrayII.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
