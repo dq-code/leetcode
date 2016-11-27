@@ -1,4 +1,8 @@
 1. two pointer search, searching from both start and end
    hashmap
    python copy list, a = list(b)
-2.
+2. linkedlist, always create pivot
+   inverse: walker = pivot
+   reverse: always set as walking as pivot.next
+3. use hashmap to record the location of already existed charactor, once repeatation found, starting from last occurance +1
+4.

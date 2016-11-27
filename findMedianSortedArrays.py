@@ -24,3 +24,5 @@ class Solution:
             return self.getKth(B[remainB:], A, remainA)
         else:
             return self.getKth(A[remainA:], B, remainB)
+
+
