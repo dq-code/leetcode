@@ -5,4 +5,12 @@
    inverse: walker = pivot
    reverse: always set as walking as pivot.next
 3. use hashmap to record the location of already existed charactor, once repeatation found, starting from last occurance +1
-4.
+4. IMPORTANT
+5. Palindrome search, from middle to both left and right direction
+6.
+7. largest integer in python, sys.maxint
+9. IMPORTANT
+   div = 1
+   while x/div >= 10:
+    div = div*10
+10. IMPORTANT
