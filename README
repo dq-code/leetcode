@@ -14,3 +14,4 @@
    while x/div >= 10:
     div = div*10
 10. IMPORTANT
+15. Think about sort first, combine hashmap and two pointer search; in order to use two pointer search, list has to be sorted first
