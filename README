@@ -15,4 +15,6 @@
     div = div*10
 10. IMPORTANT
 15. Think about sort first, combine hashmap and two pointer search; in order to use two pointer search, list has to be sorted first
+17. DFS
 19. IMPORTANT, tricky, two pointer for linked list
+22. DFS
