@@ -6,10 +6,10 @@ class Solution:
             return 0
         res = 0
         left = 0
-        right = len(height)-1
+        right = len(height) - 1
         while left < right:
-            storage = min(height[left],height[right])*(left-right)
-            res = storage if res < storage
+            storage = min(height[left], height[right]) * (left - right)
+            res = storage if res < storage else res
             if height[left] < height[right]:
                 left = left + 1
             else:

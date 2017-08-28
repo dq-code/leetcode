@@ -4,13 +4,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        if len(nums) <= 1:
-            return len(nums)
+        if len(nums) <= 1: return len(nums)
+        tail = walker = 1
+        while walker < len(nums):
+            if nums[walker] != nums[tail - 1]:
+                nums[tail] = nums[walker]
+                tail += 1
+            walker += 1
+        return tail
 
-        unique = 1
-        for i in range(1, len(nums)):
-            if nums[i] != nums[i - 1]:
-                if unique < i:
-                    nums[unique] = nums[i]
-                unique += 1
-        return unique

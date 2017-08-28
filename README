@@ -1,26 +1,61 @@
-1. two pointer search, searching from both start and end
-   hashmap
-   python copy list, a = list(b)
-2. linkedlist, always create pivot
-   inverse: walker = pivot
-   reverse: always set as walking as pivot.next
-3. use hashmap to record the location of already existed charactor, once repeatation found, starting from last occurance +1
-4. IMPORTANT
-5. Palindrome search, from middle to both left and right direction
-6.
-7. largest integer in python, sys.maxint
-9. IMPORTANT
-   div = 1
-   while x/div >= 10:
-    div = div*10
-10. IMPORTANT
-15. Think about sort first, combine hashmap and two pointer search; in order to use two pointer search, list has to be sorted first
-17. DFS
-19. IMPORTANT, tricky, two pointer for linked list
-22. DFS
-25. Reverse linked list
-28. IMPORTANT
-32. IMPORTANT
-33. Advanced binary search
-35. Advanced binary search
-37. how to decide whether the fill-in number is valid in this 3*3 subgroup is the key
+Array:
+41, 448 正负标记法 寻找丢失的元素
+283 两个指针 指向首个0可能存在的位置
+169,229 投票算法 http://bookshadow.com/weblog/2014/12/22/leetcode-majority-element/
+605 排除法 去除所有不符合标准的选项
+581 array的处理首先考虑能不能sort
+532 关注python set和collections.Counter http://www.cnblogs.com/RichardWang/p/6523767.html
+189 rotate array, 反转法
+565 正负标记法  寻找丢失的元素 难度中
+238 正反两次循环 正向计算x0 ~ xi-1的乘积 反向计算xi+1 ~ xn-1的乘积
+216 backtracing
+565 环检测，三种情况，没有循环，闭合循环，p型循环
+287 环检测，快慢指针 bookshadow.com/weblog/2015/09/28/leetcode-find-duplicate-number/
+525, 560 连续计算并记录当前subarray和，如果subsum-k出现过，则找到一组和为k的连续数组
+621 转化为查找idle的个数 greedy,优先安排出现频率最高的任务 https://discuss.leetcode.com/topic/92966/java-o-n-time-o-1-space-1-pass-no-sorting-solution-with-detailed-explanation/2
+611 二分法
+73. 不能在刚发现元素为0时就把行列都设为0，这样会影响结果，需要记录0元素位置，在扫描完该行时，将此行设为0，之后再进行一次扫描，将列设为0
+105,106 preorder,inorder,postorder
+55，45 JUMP GAME系列 1. 考虑从当前点 最远能走到什么位置，如果无法走到当前点，即为失败 2.不断记录当前所能走到的最远位置，当达到当前最远位置的时候，步数加1
+1,15,16,18 求数组和问题 排序，双指针左右逼近
+152. 当前的最小值，最大值，当前数组值都有可能是当前最小值，当前最大值
+81,33,153,189 在rotate array中查找值
+128. 最长连续子字符串 将序列中所有元素作为key放到dictory中
+42,123 建立数组用记录当前位置之前和之后其他元素的状态
+121,122,123 股票买卖
+84, 85 求面积系列 追踪最小元素 缩小查找范围
+4. 求两个sorted的数组的中位数
+
+
+Hash Table:
+500. Python built-in, map http://book.pythontips.com/en/latest/map_filter.html, any https://docs.python.org/2/library/functions.html#any, set https://docs.python.org/2/library/sets.html
+136. 异或操作的定义为：x ^ 0 = x; x ^ x = 0
+204. 找出小于n的所有质数 http://bookshadow.com/weblog/2015/04/27/leetcode-count-primes/
+648. Trie http://www.geeksforgeeks.org/trie-insert-and-search/
+94. binary tree inorder traversal, use while loop
+36.37 Sudoku, 查找小区域，先找到所在的行列，再依次iteration board[(row/3)*3+i][(col/3)*3+j], 注意python传递的是reference，所以每一次的修改都是对同一个object的修改
+274. h-index
+632. windows and priority queue(类似于对K个sorted list排序) http://bookshadow.com/weblog/2017/07/02/leetcode-smallest-range/
+336. Panlindrom 主要判断reversed word是否相等
+149. 求斜率
+
+Linked List:
+138. deep copy
+
+Dynamic Programming:
+有递归和FOR Loop两种方式，用之前的一步或某一步或某几步的结果得到当前值，需要首先知道较小的值，然后不断叠加
+53. 如果当前和小于0，归0重新开始计算
+647. Palindromic substring, DP的方式按palindrom的长度依次计算
+516. Palindromic subsequence, 每一步只存当前的结果，并且带入到下一步，https://discuss.leetcode.com/topic/78625/python-dp-o-n-space-o-n-2-time
+486. 不用考虑每一步的玩家是谁，关键在于顺序；思考用空间换取时间；比大小可以每一步都比较，不用求和再比大小 http://bookshadow.com/weblog/2017/01/22/leetcode-predict-the-winner/
+494. 把当前的结果都保存在一个dict里面 为下一步使用
+309. 考虑当天手里有股票和手里没有股票的情况 http://bookshadow.com/weblog/2015/11/24/leetcode-best-time-to-buy-and-sell-stock-with-cooldown/
+416. 类似于377 不过注意每一个元素只能使用一次
+474. 需要反着loop 以避免结果被影响
+375. MINMAX https://www.hrwhisper.me/leetcode-guess-number-higher-lower-ii/
+464. MINMAX http://bookshadow.com/weblog/2016/11/20/leetcode-can-i-win/ 使用bit manipulation记录状态 state&(1<<(pos-1))
+376. 发现上升的差值，在下降的基础上加一；反之 https://leetcode.com/problems/wiggle-subsequence/description/ 类似思路 213
+576. 每一步都会展开一个新的局面，记录整个board, 叠加每一步到达每一个点的路径数目
+
+Bits Manipulation:
+338. highbits 1<<(math.log(x,2)) http://bookshadow.com/weblog/2016/03/18/leetcode-counting-bits/

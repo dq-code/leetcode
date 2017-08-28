@@ -15,3 +15,5 @@ class Solution(object):
             res = max(res, prices[i] - localMin)
 
         return res
+
+

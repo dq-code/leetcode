@@ -5,44 +5,21 @@ class Solution(object):
         :rtype: List[int]
         """
         if len(matrix) == 0: return []
+        directions = [[0,1], [1,0], [0,-1], [-1,0]]
         res = []
-
-        row = 0
-        col = 0
-        printRow = True
-        isIncrease = True
-        while matrix[row][col] != 'x':
+        row = col = 0
+        dir = 0
+        while len(res) < len(matrix)*len(matrix[0]):
             res.append(matrix[row][col])
             matrix[row][col] = 'x'
-            if printRow:
-                if isIncrease:
-                    col += 1
-                    if col >= len(matrix[0]) or matrix[row][col] == 'x':
-                        printRow = False
-                        row += 1
-                        col -= 1
-                else:
-                    col -= 1
-                    if col < 0 or matrix[row][col] == 'x':
-                        printRow = False
-                        row -= 1
-                        col += 1
+            tempRow = row+directions[dir][0]
+            tempCol = col + directions[dir][1]
+            if tempRow<0 or tempRow>=len(matrix) or tempCol<0 or tempCol>=len(matrix[0]) or matrix[tempRow][tempCol] == 'x':
+                dir += 1
+                dir = dir%4
+                tempRow = row + directions[dir][0]
+                tempCol = col + directions[dir][1]
+            row = tempRow
+            col = tempCol
 
-            else:
-                if isIncrease:
-                    row += 1
-                    if row >= len(matrix) or matrix[row][col] == 'x':
-                        printRow = True
-                        col -= 1
-                        isIncrease = False
-                        row -= 1
-                else:
-                    row -= 1
-                    if row < 0 or matrix[row][col] == 'x':
-                        printRow = True
-                        col += 1
-                        isIncrease = True
-                        row += 1
-            if row < 0 or row >= len(matrix) or col < 0 or col >= len(matrix[0]):
-                break
         return res

@@ -4,19 +4,16 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
-                if i == 0 and j == 0: continue
-                up = -1
-                if i - 1 >= 0:
-                    up = grid[i - 1][j]
-                left = -1
-                if j - 1 >= 0:
-                    left = grid[i][j - 1]
+        matrix = [[ 0 for i in range(len(grid[0]))] for j in range(len(grid))]
+        matrix[0][0] = grid[0][0]
+        for i in range(1, len(matrix[0])):
+            matrix[0][i] = matrix[0][i-1] + grid[0][i]
 
-                if up >= 0 and left >= 0:
-                    grid[i][j] = min(up, left) + grid[i][j]
-                else:
-                    grid[i][j] = up + grid[i][j] if up >= 0 else left + grid[i][j]
+        for i in range(1, len(matrix)):
+            matrix[i][0] = matrix[i-1][0] + grid[i][0]
 
-        return grid[-1][-1]
+        for i in range(1, len(matrix)):
+            for j in range(1, len(matrix[0])):
+                matrix[i][j] = min(matrix[i-1][j], matrix[i][j-1])+grid[i][j]
+
+        return matrix[-1][-1]

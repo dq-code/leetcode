@@ -6,27 +6,18 @@
 #         self.right = None
 
 class Solution(object):
-    def helper(self, index, list):
-        if len(list) == 0: return None
-        if index < 0: return None
-        # print list
-        root = TreeNode(self.postorder[index])
-        # print "index is %d, value is %d"%(index, root.val)
-        i = list.index(root.val)
-        # print "i is %d"%i
-
-        root.left = self.helper(index - len(list) + i, list[:i])
-        root.right = self.helper(index - 1, list[i + 1:])
-        return root
-
     def buildTree(self, inorder, postorder):
         """
+        :type preorder: List[int]
         :type inorder: List[int]
-        :type postorder: List[int]
         :rtype: TreeNode
         """
-        if len(inorder) == 0:
-            return None
-        self.postorder = postorder
+        if len(preorder) == 0: return None
 
-        return self.helper(len(self.postorder) - 1, inorder)
+        root = TreeNode(postorder[-1])
+        inorder_index = inorder.index(postorder[-1])
+        root.right = self.buildTree(inorder[inorder_index + 1:], postorder[inorder_index:-1])
+        root.left = self.helper(inorder[:inorder_index],postorder[:inorder_index])
+
+        return root
+
