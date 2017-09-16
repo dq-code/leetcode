@@ -11,7 +11,7 @@ Array:
 216 backtracing
 565 环检测，三种情况，没有循环，闭合循环，p型循环
 287 环检测，快慢指针 bookshadow.com/weblog/2015/09/28/leetcode-find-duplicate-number/
-525, 560 连续计算并记录当前subarray和，如果subsum-k出现过，则找到一组和为k的连续数组
+525, 560, 523, 连续计算并记录当前subarray和，如果subsum-k出现过，则找到一组和为k的连续数组
 621 转化为查找idle的个数 greedy,优先安排出现频率最高的任务 https://discuss.leetcode.com/topic/92966/java-o-n-time-o-1-space-1-pass-no-sorting-solution-with-detailed-explanation/2
 611 二分法
 73. 不能在刚发现元素为0时就把行列都设为0，这样会影响结果，需要记录0元素位置，在扫描完该行时，将此行设为0，之后再进行一次扫描，将列设为0
@@ -54,8 +54,19 @@ Dynamic Programming:
 474. 需要反着loop 以避免结果被影响
 375. MINMAX https://www.hrwhisper.me/leetcode-guess-number-higher-lower-ii/
 464. MINMAX http://bookshadow.com/weblog/2016/11/20/leetcode-can-i-win/ 使用bit manipulation记录状态 state&(1<<(pos-1))
-376. 发现上升的差值，在下降的基础上加一；反之 https://leetcode.com/problems/wiggle-subsequence/description/ 类似思路 213
+376.213,152 准备两个队列 https://leetcode.com/problems/wiggle-subsequence/description/
 576. 每一步都会展开一个新的局面，记录整个board, 叠加每一步到达每一个点的路径数目
 
 Bits Manipulation:
 338. highbits 1<<(math.log(x,2)) http://bookshadow.com/weblog/2016/03/18/leetcode-counting-bits/
+
+Linked List
+328. odd.next = even.next; odd = odd.next; even.next = old.next; even = even.next; 奇偶相互交替，只需要考虑偶数的边界问题  http://bookshadow.com/weblog/2016/01/16/leetcode-odd-even-linked-list/
+86. 记住把最末尾node的next置为NONE
+148. 快慢指针变形，slow=head, fast=head.next, 要不然在只有两个node的情况下 会无限循环
+138. 将新node直接添加在原有的node后面，这样其指向的新随机node也是老随机node的下一位 http://www.cnblogs.com/zuoyuan/p/3745126.html
+23. heapq可存放的元素可以是tuple http://www.cnblogs.com/zuoyuan/p/3772372.html
+437. 递归，包括当前的node，不包括当前的node，双重递归 http://bookshadow.com/weblog/2016/10/23/leetcode-path-sum-iii/
+235. 最小公共祖先 http://bookshadow.com/weblog/2015/07/11/leetcode-lowest-common-ancestor-binary-search-tree/
+101. 查看是否左右对称，转换为查看左树和右树是否相等
+
