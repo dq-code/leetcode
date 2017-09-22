@@ -6,22 +6,22 @@
 #         self.right = None
 
 class Solution(object):
-    def levelOrder(self, root):
+    def rightSideView(self, root):
         """
         :type root: TreeNode
-        :rtype: List[List[int]]
+        :rtype: List[int]
         """
-        if root == None: return []
+        if not root: return []
+
         stack = [root]
         res = []
         while stack:
+            res.append(stack[0].val)
             children = []
-            vals = []
             for node in stack:
-                vals.append(node.val)
-                if node.left: children.append(node.left)
                 if node.right: children.append(node.right)
-            stack=children
-            res.append(vals)
-
+                if node.left: children.append(node.left)
+            stack = children
         return res
+
+
