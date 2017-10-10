@@ -11,29 +11,19 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[List[int]]
         """
-        if root == None: return []
+        if not root: return []
+        stack = [root]
         res = []
-        stack = [[root, 1, True]]
-        while len(stack) > 0:
-            data = stack.pop(0)
-            node = data[0]
-            # print "pop %d"%node.val
-            level = data[1]
-            rightFirst = data[2]
-
-            if len(res) < level:
-                res.append([node.val])
-            else:
-                if level % 2 == 1:
-                    res[level - 1].insert(0, node.val)
-                else:
-                    res[level - 1].append(node.val)
-
-            if node.right:
-                # print "push %d"%node.right.val
-                stack.append([node.right, level + 1, False])
-            if node.left:
-                # print "push %d"%node.left.val
-                stack.append([node.left, level + 1, False])
-
+        while stack:
+            children = []
+            cur_list = []
+            for node in stack:
+                cur_list.append(node.val)
+                if node.left: children.append(node.left)
+                if node.right: children.append(node.right)
+            res.append(cur_list)
+            stack = children
+        for i in range(len(res)):
+            if i % 2 == 1:
+                res[i] = list(reversed(res[i]))
         return res

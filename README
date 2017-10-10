@@ -72,3 +72,5 @@ Linked List
 655. 二叉树每一层最多可以有2**d-1个child node
 230.94.173 用iteration的方式做inorder traversal
 430. 删除子节点 保持二叉树特性
+652. 将二叉树转化为string，加括号以体现其的结构特点 flat_tree = "%s(%s,%s)"%(node.val, helper(node.left), helper(node.right)) http://bookshadow.com/weblog/2017/07/30/leetcode-find-duplicate-subtrees/
+105,104 preorder, inorder, postorder

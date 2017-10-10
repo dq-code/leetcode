@@ -6,27 +6,26 @@
 #         self.right = None
 
 class Solution(object):
-    def helper(self, root):
-        if root == None: return None
-        if root.left != None:
-            print root.val
-            temp = root.right
-            # print "root left value is %d"%root.left.val
-            node = self.helper(root.left)
-            walker = node
-            while walker.right != None:
-                walker = walker.right
-            walker.right = self.helper(temp)
-            root.right = node
-            root.left = None
-        else:
-            root.right = self.helper(root.right)
-        # print "return root is %d"% root.val
-        return root
-
     def flatten(self, root):
         """
         :type root: TreeNode
         :rtype: void Do not return anything, modify root in-place instead.
         """
-        self.helper(root)
+        if not root: return None
+
+        def helper(prev, node):
+            if not node: return None
+
+            prev.right = node
+            orig_right = node.right
+            new_prev = node
+            if node.left:
+                next_node = node.left
+                node.left = None
+                new_prev = helper(node, next_node)
+            if orig_right:
+                new_prev = helper(new_prev, orig_right)
+            return new_prev
+
+        pivot = TreeNode(0)
+        helper(pivot, root)
