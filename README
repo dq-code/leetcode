@@ -75,3 +75,7 @@ Linked List
 652. 将二叉树转化为string，加括号以体现其的结构特点 flat_tree = "%s(%s,%s)"%(node.val, helper(node.left), helper(node.right)) http://bookshadow.com/weblog/2017/07/30/leetcode-find-duplicate-subtrees/
 105,104 preorder, inorder, postorder
 145 postorder traversal iteration
+99. 充分运用inorder的特性 http://blog.csdn.net/hyperbolechi/article/details/42751417
+
+String:
+345. 注意细节，两个指针，随时查看边界条件 
