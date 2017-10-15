@@ -78,4 +78,16 @@ Linked List
 99. 充分运用inorder的特性 http://blog.csdn.net/hyperbolechi/article/details/42751417
 
 String:
-345. 注意细节，两个指针，随时查看边界条件 
+345. 注意细节，两个指针，随时查看边界条件
+
+sort:
+280. 观察规律，注意奇偶位置不同的特点
+
+stack, iteration:
+341. 利用stack，存放已经查看过的元素，将这些工作都放在hasNext()里面完成
+
+matrix:
+200. 注意matrix通常是用string来表示，所以标记是'0'和'1'
+
+Trie:
+208
