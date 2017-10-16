@@ -38,6 +38,7 @@ Hash Table:
 632. windows and priority queue(类似于对K个sorted list排序) http://bookshadow.com/weblog/2017/07/02/leetcode-smallest-range/
 336. Panlindrom 主要判断reversed word是否相等
 149. 求斜率
+166. 考虑重复的部分可能是个string，需要用map记录
 
 Linked List:
 138. deep copy
