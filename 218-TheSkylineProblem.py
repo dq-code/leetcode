@@ -26,4 +26,4 @@ class Solution(object):
             curY = 0 if not liveBld else -liveBld[0][0]
             if not res or res[-1][1] != curY: res.append((curX, curY))
 
-        return res
+        return res6o
