@@ -96,3 +96,12 @@ Trie:
 计算器：
 282， 分为左右两边，recursive https://discuss.leetcode.com/topic/24523/java-standard-backtrace-ac-solutoin-short-and-clear
 224. 前缀变后缀表达式
+
+union find:
+305
+
+binary array mark:
+616
+
+perfect example of all() and iter():
+524
